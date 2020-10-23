@@ -42,8 +42,8 @@ ordina.addEventListener('click', function ()
     var y = 0;
     while (y < cognomi.length)
     {
-      listaCognomi = listaCognomi + "<li>" + cognomi[i] + "</li>"
-      i++;
+      listaCognomi = listaCognomi + "<li>" + cognomi[y] + "</li>"
+      y++;
     }
     console.log(cognomi);
   });
