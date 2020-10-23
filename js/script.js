@@ -30,6 +30,6 @@ ordina.addEventListener('click', function ()
   console.log(listaCognomi);
   document.getElementById('stampa').innerHTML = listaCognomi
   //scrivi la posizione “umana” della lista in cui il nuovo utente si trova
-  var posizione = listaCognomi.indexOf(utente);
-  document.getElementById('position').innerHTML = posizione;
+  var posizione = cognomi.indexOf(utente);
+  document.getElementById('position').innerHTML = "la posizione del tuo cognome in questa lista è la n°: " + ++posizione;
 });
