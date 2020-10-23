@@ -32,4 +32,19 @@ ordina.addEventListener('click', function ()
   //scrivi la posizione “umana” della lista in cui il nuovo utente si trova
   var posizione = cognomi.indexOf(utente);
   document.getElementById('position').innerHTML = "la posizione del tuo cognome in questa lista è la n°: " + ++posizione;
+  // console.log(cognomi);
+
+  // vado a disordinare la lista con un altro bottone :
+  var disordina = document.getElementById('button_2');
+  disordina.addEventListener('click', function ()
+  {
+    cognomi.reverse();
+    var y = 0;
+    while (y < cognomi.length)
+    {
+      listaCognomi = listaCognomi + "<li>" + cognomi[i] + "</li>"
+      i++;
+    }
+    console.log(cognomi);
+  });
 });
