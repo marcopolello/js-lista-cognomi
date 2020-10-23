@@ -6,6 +6,7 @@
 
 // Lista Cognomi
 var cognomi = ["bianchi", "rossi", "duzioni", "balsano", "verdi"];
+var listaCognomi = "";
 // console.log(cognomi);
 document.getElementById('lista').innerHTML = cognomi
 // Chiedere all’utente il cognome
@@ -14,7 +15,7 @@ var utente = prompt("scrivi il tuo cognome");
 cognomi.push(utente);
 console.log(cognomi);
 
-// stampa la lista ordinata alfabeticamente
+// stampa la lista ordinata alfabeticamente post evento CLICK
 var ordina = document.getElementById('button');
 ordina.addEventListener('click', function ()
 {
@@ -22,10 +23,13 @@ ordina.addEventListener('click', function ()
   var i = 0;
   while (i < cognomi.length)
   {
-    // var cognomi = cognomi + "<li>" + cognomi[i] + "</li>"
+    listaCognomi = listaCognomi + "<li>" + cognomi[i] + "</li>"
     i++;
   }
-  console.log(cognomi);
-
-  document.getElementById('stampa').innerHTML = cognomi
+  // stampa della lista di cognomi
+  console.log(listaCognomi);
+  document.getElementById('stampa').innerHTML = listaCognomi
+  //scrivi la posizione “umana” della lista in cui il nuovo utente si trova
+  var posizione = listaCognomi.indexOf(utente);
+  document.getElementById('position').innerHTML = posizione;
 });
