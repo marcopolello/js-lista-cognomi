@@ -12,7 +12,7 @@ var listaCognomiRandom = "";
 document.getElementById('lista').innerHTML = cognomi
 // Chiedere all’utente il cognome
 var utente = prompt("scrivi il tuo cognome");
-  // inserisco
+  // prima lettera input diventa maiuscola
   if (utente && utente.length >= 1)
     {
       var primoCarattere = utente.charAt(0);
