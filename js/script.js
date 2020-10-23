@@ -21,11 +21,11 @@ ordina.addEventListener('click', function ()
 {
   cognomi.sort();
   var i = 0;
-  while (i < cognomi.length)
-  {
+  do {
     listaCognomi = listaCognomi + "<li>" + cognomi[i] + "</li>"
     i++;
-  }
+  } while (i < cognomi.length);
+
   // stampa della lista di cognomi
   console.log(listaCognomi);
   document.getElementById('stampa').innerHTML = listaCognomi
@@ -38,13 +38,27 @@ ordina.addEventListener('click', function ()
   var disordina = document.getElementById('button_2');
   disordina.addEventListener('click', function ()
   {
-    cognomi.reverse();
-    var y = 0;
-    while (y < cognomi.length)
-    {
-      listaCognomi = listaCognomi + "<li>" + cognomi[y] + "</li>"
-      y++;
-    }
-    console.log(cognomi);
+    const randomizza = cognomi.sort(() => 0.5 - Math.random());
+    let selezionato = randomizza.slice(0, 6);
+    // var item = cognomi[Math.floor(Math.random()*cognomi.length)];
+    document.getElementById('stampa_2').innerHTML = selezionato
   });
 });
+
+
+/* funzione per ordine random
+function getRandom(arr, n)
+{
+  var result = new Array(n),
+    len = arr.length,
+      taken = new Array(len);
+    if (n > len)
+      throw new RangeError("getRandom: more elements taken than available");
+    while (n--)
+    {
+      var x = Math.floor(Math.random() * len);
+      result[n] = arr[x in taken ? taken[x] : x];
+        aken[x] = --len in taken ? taken[len] : len;
+    }
+  return result;
+} */
