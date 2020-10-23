@@ -5,12 +5,20 @@
 // scrivi anche la posizione “umana” della lista in cui il nuovo utente si trova
 
 // Lista Cognomi
-var cognomi = ["bianchi", "rossi", "duzioni", "balsano", "verdi"];
+var cognomi = ["Bianchi", "Rossi", "Duzioni", "Balsano", "Verdi"];
 var listaCognomi = "";
+var listaCognomiRandom = "";
 // console.log(cognomi);
 document.getElementById('lista').innerHTML = cognomi
 // Chiedere all’utente il cognome
 var utente = prompt("scrivi il tuo cognome");
+  // inserisco
+  if (utente && utente.length >= 1)
+    {
+      var primoCarattere = utente.charAt(0);
+      var restoStringa = utente.slice(1);
+      utente = primoCarattere.toUpperCase() + restoStringa;
+    }
 // inserirlo in un array con gli altri cognomi
 cognomi.push(utente);
 console.log(cognomi);
@@ -41,7 +49,14 @@ ordina.addEventListener('click', function ()
     const randomizza = cognomi.sort(() => 0.5 - Math.random());
     let selezionato = randomizza.slice(0, 6);
     // var item = cognomi[Math.floor(Math.random()*cognomi.length)];
-    document.getElementById('stampa_2').innerHTML = selezionato
+    // document.getElementById('stampa_2').innerHTML = selezionato
+    i = 0;
+    while (i < selezionato.length) {
+      listaCognomiRandom = listaCognomiRandom + "<li>" + cognomi[i] + "</li>"
+      i++;
+    }
+    console.log(listaCognomiRandom);
+    document.getElementById('stampa_2').innerHTML = listaCognomiRandom
   });
 });
 
